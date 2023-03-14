@@ -1,0 +1,59 @@
+public static void preguntasComunes() {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Introducir el nombre de la mascota: ");
+        String nombreM = teclado.nextLine();
+        System.out.println("Introducir la edad de la mascota: ");
+        int edadM = teclado.nextInt();
+        System.out.println("Introducir el estado de la mascota: ");
+        String estadoM = teclado.nextLine();
+        System.out.println("Introducir la fecha de nacimiento: ");
+        String fechaNac = teclado.nextLine();
+    }
+
+insertarAnimal (ejercicio Mascotas) {
+String nombreM = "";
+        int edadM = 0;
+        String estadoM = "";
+        String fechaNac = "";
+        Scanner teclado = new Scanner(System.in);
+        preguntasComunes();
+        System.out.println("Introducir tipo de animal: ");
+        String tipoM = teclado.nextLine();
+            if (tipoM.equalsIgnoreCase("Canario")) {
+                System.out.println("¿Tiene pico?");
+                String picoM = teclado.nextLine();
+                System.out.println("¿Puede volar?");
+                boolean vuelaM = teclado.nextBoolean();
+                System.out.println("¿De qué color es?");
+                String colorM = teclado.nextLine();
+                System.out.println("¿Canta?");
+                boolean cantaM = teclado.nextBoolean();
+                Canario c1 = new Canario(nombreM,edadM,estadoM,fechaNac,picoM,vuelaM,colorM,cantaM);
+                mascotas.add(c1);
+            } else if (tipoM.equalsIgnoreCase("Loro")) {
+                System.out.println("¿Tiene pico?");
+                String picoM = teclado.nextLine();
+                System.out.println("¿Puede volar?");
+                boolean vuelaM = teclado.nextBoolean();
+                System.out.println("¿De dónde es originario?");
+                String origenM = teclado.nextLine();
+                System.out.println("¿Habla?");
+                boolean hablaM = teclado.nextBoolean();
+                Loro l1 = new Loro(nombreM,edadM,estadoM,fechaNac,picoM,vuelaM,origenM,hablaM);
+                mascotas.add(l1);
+            } else if (tipoM.equalsIgnoreCase("Gato")) {
+                System.out.println("¿De qué color es?");
+                String colorM = teclado.nextLine();
+                System.out.println("¿Tiene el pelo largo?");
+                boolean peloLargoM = teclado.nextBoolean();
+                Gato g1 = new Gato(nombreM,edadM,estadoM,fechaNac,colorM,peloLargoM);
+                mascotas.add(g1);
+            } else if (tipoM.equalsIgnoreCase("Perro")) {
+                System.out.println("¿De qué raza es?");
+                String razaM = teclado.nextLine();
+                System.out.println("¿Tiene pulgas?");
+                boolean pulgasM = teclado.nextBoolean();
+                Perro p1 = new Perro(nombreM,edadM,estadoM,fechaNac,razaM,pulgasM);
+                mascotas.add(p1);
+            }
+}
